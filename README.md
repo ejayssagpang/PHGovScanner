@@ -1,5 +1,5 @@
 # PHGovScanner
-This is a tool wherein you can passively scan any Philippine Governments for any exposed data on the internet.
+This is a tool wherein you can passively scan any Philippine Government Sectors for any exposed data on the internet.
 
 
 # How to install and use
