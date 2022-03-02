@@ -2,7 +2,7 @@
 This is a tool wherein you can passively scan any Philippine Government Sectors for any exposed data on the internet.
 
 
-#How to install and Use
+# How to install and Use
 
 1.) Clone the repository: <b> git clone https://github.com/ejayssagpang/PHGovScanner.git </b>
 
