@@ -1,57 +1,34 @@
-from wsgiref import headers
-from fastapi import Query
-import requests
-from bs4 import BeautifulSoup
-from re import search
+from selenium import webdriver
+import time
 
+Documents= ["pdf","doc","docx","csv","xls","xlsx","txt","rtf","odt","ppt","pptx","pptm","xml","klm"]
+Databases = [ "php", "sql", "sqlite", "pdb", "idb", "cdb","sis", "odb"]
+Softwares = ["env", "cfg", "conf","config","cfm","log","inf"]
 
-headers = { "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36 Edg/98.0.1108.50}" }
+dataConfig = ["Documents", "documents","databases", "Databases", "Softwares", "softwares"]
+govLink=(input("[+] Please enter any Philipppine Government Website: "))
+scanConfig = (input("[+] Choose and type one set of data to scan (Documents, Databases, Softwares): "))
+if scanConfig not in dataConfig:
+    print("Invalid input. Please try again. ")
+    exit()
+keyWord = (input("[+] Enter a keyword: "))
 
-
-tempGovSite = input('Please enter Philippine government website: ')
 print("")
-print("Now Scanning: https://www." +tempGovSite)
+print("===============================")
+print("Opening Google Chrome...")
+print("===============================")
 print("")
 
-print("---------EXPOSED DATA FILES----------")
-print("")
-query = "https://www.google.com/search?q=site%3A"+tempGovSite+"+inurl%3Aadmin+filetype%3Apdf"         
-req = requests.get(query, headers=headers)
+time.sleep(2)
 
-soup = BeautifulSoup(req.text, "html.parser")
-divs = soup.find('div', id="rso")
-if divs is None:
-    print("No contents found.")
-else:
-    a_tags = divs.find_all('div', class_='yuRUbf')
-    for div in a_tags:
-        a = div.find('a',href=True)
-        print(a.attrs['href'])
-    print("")
-        
-print("")
-print("----------EXPOSED DATA LINKS----------")
-print("")
-query = "https://www.google.com/search?q=site%3A"+tempGovSite+"+inurl%3Aadmin+intext%3Aindex+of+%2F"         
-req = requests.get(query, headers=headers)
+browser = webdriver.Chrome('/home/kali/Downloads/chromedriver')
 
-soup = BeautifulSoup(req.text, "html.parser")
-divs = soup.find('div', id="rso")
-if divs is None:
-    print("No contents found.")
-    
-else:
-    a_tags = divs.find_all('div', class_='yuRUbf')
-    for div in a_tags:
-        a = div.find('a',href=True)
-        print(a.attrs['href'])
-    print("")
-
-
-
-
-
-
-
-
-
+if scanConfig in "Documentsdocuments":
+    for i in range(len(Documents)):
+        elements = browser.execute_script('''window.open("http://google.com/search?q=site%3A'''+str(govLink)+'''+filetype%3A'''+str(Documents[i])+'''+%22'''+str(keyWord)+'''%22", "_blank")''')
+elif scanConfig in "Databasesdatabases":
+    for i in range(len(Databases)):
+        elements = browser.execute_script('''window.open("http://google.com/search?q=site%3A'''+str(govLink)+'''+filetype%3A'''+str(Databases[i])+'''+%22'''+str(keyWord)+'''%22", "_blank")''')
+elif scanConfig in "Sofwaressoftwares":
+    for i in range(len(Softwares)):
+        elements = browser.execute_script('''window.open("http://google.com/search?q=site%3A'''+str(govLink)+'''+filetype%3A'''+str(Databases[i])+'''+%22'''+str(keyWord)+'''%22", "_blank")''')
