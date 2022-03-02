@@ -4,7 +4,7 @@ This is a tool wherein you can passively scan any Philippine Government Sectors 
 
 # How to install and Use
 
-1.) Clone the repository: <b> git clone https://github.com/ejayssagpang/PHGovScanner.git </b>
+1.) Clone the repository on you CLI: <b> git clone https://github.com/ejayssagpang/PHGovScanner.git </b>
 
 2.) You must download Chromedriver. <b>https://chromedriver.chromium.org/downloads</b>
 
@@ -14,7 +14,9 @@ This is a tool wherein you can passively scan any Philippine Government Sectors 
 
 5.) Extract the zip file.
 
-6.) Open the folder and copy the file <b> chromedriver </b> and paste it on the PHGovScanner folder: <b>cd PHGovScanner</b> 
+6.) Open the folder and copy the file <b> chromedriver </b> and paste it on the PHGovScanner folder
+
+8.)In your CLI, find the PHGovScanner folder: <b>cd PHGovScanner</b>
 
 7.) Run the tool:<b> python3 PHGovScanner.py</b> 
 
