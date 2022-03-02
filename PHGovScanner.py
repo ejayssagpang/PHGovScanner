@@ -11,7 +11,7 @@ scanConfig = (input("[+] Choose and type one set of data to scan (Documents, Dat
 if scanConfig not in dataConfig:
     print("Invalid input. Please try again. ")
     exit()
-keyWord = (input("[+] Enter a keyword: "))
+keyWord = (input("[+] Enter a keyword (Press Enter if there is no specific keyword): "))
 
 print("")
 print("===============================")
