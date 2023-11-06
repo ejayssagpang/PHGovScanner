@@ -8,7 +8,7 @@ This is a tool wherein you can passively scan any Philippine Government Sectors 
 
 2.) You must download Chromedriver. <b>https://chromedriver.chromium.org/downloads</b>
 
-3.) Choose the appropirate version for your browser. To search for you browser's version, go to your browser's settings, and look for about "your browser" tab
+3.) Choose the appropriate version for your browser. To search for you browser's version, go to your browser's settings, and look for about "your browser" tab
 
 4.) Download the zip file as to what Operating System are you currently using.
 
